@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'bootstrap_css.html' %}
+    <title>Your Notes</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% include 'banner.html' %}
+    {% include 'listen_flashes.html' %}
+    <br>
+    <div class="row justify-content-center">
+        {% for note in Notes %}
+        <div class="col-md-6 col-lg-4 form-container p-4 mt-5 me-1">
+            <div class="row">
+                <div class="col-3">
+                    <img
+                        src="{{ url_for('static', filename=Notes[5]) }}"
+                        alt=""
+                        width="150"
+                        class="img-fluid"
+                    />
+                </div>
+                <div class="col">
+                    <h2>Category: {{ Notes[2] }}</h2>
+                    <p>Content: {{Notes[3]}}</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
